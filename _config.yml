@@ -53,7 +53,7 @@ highlight:
 prismjs:
   enable: true
   preprocess: true
-  line_number: true
+  line_number: false
   tab_replace: ''
 
 # Home page setting
@@ -103,7 +103,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/leehm00/leehm00.github.io
+  repository: git@github.com:leehm00/leehm00.github.io
   branch: master
 
 search:
