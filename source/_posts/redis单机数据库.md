@@ -52,11 +52,11 @@ categories:
 
 - 设置生存和过期时间
 
-  ![image-20211110165635236](redis单机数据库.assets/image-20211110165635236.png)
+  ![image-20211110165635236](image-20211110165635236.png)
 
 - 带有生存和过期时间的数据库
 
-  ![image-20211110165743757](redis单机数据库.assets/image-20211110165743757.png)
+  ![image-20211110165743757](image-20211110165743757.png)
 
   添加过期时间就是在过期字典中添加项目,移除过期时间就是在过期字典中删除对应的项目,键过期时间和当前时间做差就可以计算出生存时间.
 
@@ -66,7 +66,7 @@ categories:
 
     - db.c的expireIfNeeded()函数对于所有的输入键检查是否过期,过期的键直接删除
 
-      ![image-20211111154024925](../../../../../OneDrive - USTC/Files/learningMaterials/redis_learning/leehm/notes/redis代码要点.assets/image-20211111154024925.png)
+      ![image-20211111154024925](image-20211111154024925.png)
 
       - 定期删除
         - 由expire.c中的activeExpireCycle()函数实现定期删除,当服务器定期执行server.c的serverCron()函数时,就会调用,在expire字典中随机检查一部分键的过期时间,并且删除其中的过期键.
@@ -79,22 +79,22 @@ categories:
     - AOF对于过期键处理
 
       - 写入时如果键过期但没有删除,不会影响,当(惰性或者定期)删除的时候追加一条DEL
-        - ![image-20211111214557807](../../../../../OneDrive - USTC/Files/learningMaterials/redis_learning/leehm/notes/redis代码要点.assets/image-20211111214557807.png)
+        - ![image-20211111214557807](image-20211111214557807.png)
 
       - 重写入的时候检查键是否过期,过期键不加入数据库
 
     - 复制对于过期键处理
 
       - 主服务器处理,之后对从服务器发送DEL,从服务器对于过期键不做处理
-      - ![image-20211111220239415](redis单机数据库.assets/image-20211111220239415.png)![image-20211111220255616](redis单机数据库.assets/image-20211111220255616.png)
+      - ![image-20211111220239415](image-20211111220239415.png)![image-20211111220255616](image-20211111220255616.png)
 
 
     ### 数据库通知
-
+    
     - 可以监视对键的操作情况,或者是监视某个指令的使用情况
-
+    
     - 由notify.c/notifyKeyspaceEvent()函数实现:
-
+    
       ```c
       /* The API provided to the rest of the Redis core is a simple function:
        *实现了发送数据库通知的功能
@@ -157,50 +157,51 @@ categories:
       }
       ```
 
-    
+
+​    
 
     ## RDB持久化
-
+    
     redis是内存数据库,RDB持久化将数据库状态保存到磁盘里面,避免数据意外丢失
-
+    
     RDB文件时压缩的二进制文件,可以用这个文件恢复数据库状态,主要使用save和bgsave实现
-
+    
     ### 创建和载入
-
+    
     - save创建RDB文件,但是会阻塞服务器;bgsave生成一个子进程,专门负责生成RDB文件
     - 只要有RDB文件在,就会自动载入RDB文件(如果开启了AOF持久化功能,会优先使用AOF文件还原数据库)
     - bgsave执行期间不能执行save,bgsave(防止竞争条件);也不能执行bgrewriteaof,因为都会有大量的磁盘写入
-
+    
     ### 自动保存
-
+    
     #### 设置自动保存条件
-
+    
     设定自动保存的条件,达到条件时自动运行bgsave
-
+    
     条件保存在redisServer的saveparams属性中
-
+    
     #### dirty计数器和lastsave属性
-
+    
     - dirty计数器记录上次成功执行save或者bgsave之后服务器对数据库进行修改的次数
     - lastsave记录了上次成功save的时间
-
+    
     #### 检查保存条件
-
+    
     serverCron函数默认没100ms就要执行一次,维护当前运行的数据库,同时也检查了自动保存条件是否满足,只要有一个条件满足了就要执行bgsave
-
+    
     ## AOF持久化(Append Only File)
-
+    
     通过保存所有的写命令记录数据库状态
-
+    
     写命令执行之后加到redisServer的aof_buf缓冲区末尾,在处理事件循环的时候决定是否将缓冲区的值写入到AOF文件
-
+    
     数据还原的时候先创建不带网络连接的伪客户端,直接使用来自AOF文件中的命令,挨个执行,最终执行完毕就是数据库的状态
-
+    
     ### AOF文件重写
-
+    
     - 直接读取当前状态,对于每个键直接使用add指令读取最后的状态作为一个add添加进去.
-
+    
     - 开始执行重写之后可能会继续执行指令,对于数据库进行修改,因此建立了AOF重写缓冲区,新指令同时同步到AOF缓冲区和AOF重写缓冲区
     - 完成重写之后直接覆盖原来的AOF文件
-
+    
     ## 

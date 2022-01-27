@@ -902,8 +902,7 @@ end
 id2--是-->id3[关闭服务器]
 ```
 
-![main_start_event_loop](redis事件.assets/main_start_event_loop.png)
+![main_start_event_loop](main_start_event_loop-3251881.png)
 
 两张图的方式都差不多,展示了整个redis的过程
 
-## 
