@@ -3,13 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: homie's HomePage
+title: homie's Home
 subtitle: homie lee
 description: USTC | CS | Distributed System | In-memory Key-Value Store
 keywords: "KV store"
 author: homie
 language: zh-CN
 timezone: ''
+
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -103,7 +105,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:leehm00/leehm00.github.io
+  repository: git@git.zhlh6.cn:leehm00/leehm00.github.io
   branch: master
 
 search:
