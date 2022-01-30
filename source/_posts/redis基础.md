@@ -11,7 +11,7 @@ tags:
 - redis
 categories:
 - 学习
-
+typora-root-url: ../
 
 ---
 
@@ -186,7 +186,9 @@ categories:
 
 - 结构:
 
-  - ```c
+  - 源代码：
+    
+    ```c
     typedef struct {
         /* When string is used, it is provided with the length (slen). */
         unsigned char *sval;
@@ -199,8 +201,10 @@ categories:
     //这是因为ziplist本质上就是一块连续内存，
     //内部组成结构又是一个高度动态的设计（变长编码），也没法用一个固定的数据结构来表达。
     ```
-
-  - ```c
+    
+  - zlentry结构：
+    
+    ```c
     /* We use this function to receive information about a ziplist entry.
      * Note that this is not how the data is actually encoded, is just what we
      * get filled by a function in order to operate more easily. */
@@ -241,7 +245,9 @@ categories:
 
 - 结构:
 
-  - ```c
+  - 源代码：
+    
+    ```c
     typedef struct redisObject {
         //对象的数据类型
         //可能的取值有5种：OBJ_STRING, OBJ_LIST, OBJ_SET, OBJ_ZSET, OBJ_HASH，
@@ -260,7 +266,7 @@ categories:
         void *ptr;
     } robj;
     ```
-
+    
     
 
 - string对象:
@@ -327,5 +333,3 @@ categories:
 - parseExtendedStringArgumentsOrReply()判断当前字符串操作指令的有效性
 - *getexCommand()*对于GET的多余参数进行处理,和GET不同,这个指令不是仅可读的
 - setrangeCommand()函数中感觉有个地方可以优化,sdslen只能为0或者正值,那么可以减少一个地方的判断,少用一个if语句
-
-# 
