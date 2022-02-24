@@ -22,7 +22,7 @@ summary:
 
 # 前言
 
-年前被学长安利了分布式最终一致性的存储系统 [Anna](http://db.cs.berkeley.edu/jmh/papers/anna_ieee18.pdf) 。初略看了一眼Paper，似乎很是牛X。说是支持任意规模的扩展，并且性能不低于 [pedis](https://github.com/fastio/pedis)。于是抽空来看看并了解下这套系统的设计特点和这种夸张的单机性能和扩展性的来源。
+初略看了一眼Paper，似乎很是牛X。说是支持任意规模的扩展，并且性能不低于 [pedis](https://github.com/fastio/pedis)。于是抽空来看看并了解下这套系统的设计特点和这种夸张的单机性能和扩展性的来源。
 
 # 主流分布式KVS的比较
 
