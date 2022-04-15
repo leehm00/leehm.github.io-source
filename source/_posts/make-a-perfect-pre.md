@@ -211,3 +211,5 @@ Cultural dif(races, skin colors, taboos in different culture)
 1. Pronounciation
 2. Performance 
 3. Respect 
+
+Notes after watching [Ericaliga’s 如何做好Presentation](https://video.weibo.com/show?fid=1034:4662487312957449&mark_id=999%5Freallog%5Fmark%5Fad%3A999%7CWeiboADNatural)
