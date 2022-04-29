@@ -61,7 +61,8 @@ cp redis.conf ./config/redis-7000.conf
         cluster-enabled yes
 集群节点nodes信息配置文件()
         cluster-config-file "/home/k8s/homie/redis-6.2.1/node/nodes-7000.conf"
-设置访问密码
+设置访问密码（尽量别设置）
+				protected-mode no
         #requirepass redis123
 ```
 
@@ -70,7 +71,7 @@ cp redis.conf ./config/redis-7000.conf
 将 redis-7000.conf 文件都复制一份并修改，附sed命令：**sed 's/要被取代的字串/新的字串/g'**
 
 ```shell
-cd /home/k8s/homie/redis-6.2.1/config
+cd /home/k8s/homie/redis-6.2.2/config
 sed "s/7000/7001/g" redis-7000.conf > redis-7001.conf
 sed "s/7000/7002/g" redis-7000.conf > redis-7002.conf
 sed "s/7000/7003/g" redis-7000.conf > redis-7003.conf
@@ -81,7 +82,7 @@ sed "s/7000/7005/g" redis-7000.conf > redis-7005.conf
 # 启动6个Redis实列
 
 ```shell
-cd /home/k8s/homie/redis-6.2.1
+cd /home/k8s/homie/redis-6.2.2
 ./src/redis-server ./config/redis-7000.conf
 ./src/redis-server ./config/redis-7001.conf
 ./src/redis-server ./config/redis-7002.conf
@@ -101,9 +102,11 @@ cd /home/k8s/homie/redis-6.2.1
 ​    选项–replicas 1 ： 表示我们希望为集群中的每个主节点创建一个从节点
 ​    前12个是主节点，后面的是从节点（若节点在不同的机器上，注意主节点的书写位置，要避免主节点在同一台机器上，影响性能）
 
+请根据自己的机器情况修改对应的IP：port
+
 # 分配槽
 
-一般情况下平均分配好了
+一般情况下平均分配好了（在启动的时候会直接分配）
 
 ```bash
 ./src/redis-cli -h 127.0.0.1 -p 7000 cluster addslots {0..2730}
