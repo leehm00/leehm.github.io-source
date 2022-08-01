@@ -24,7 +24,7 @@ summary:
 
     当然也可以先创建一个模板减少以后的工作量（在下面edit configuration templates一样选择tomcat server 的local）
 
-  - 在application server中选择configure，之后选择自己本机的tomcat路径，选到tomcat home就好了![配置tomcat路径](idea创建javaweb项目并部署运行/image-20220731175227518.png)
+  - 在application server中选择configure，之后选择自己本机的tomcat路径附[tomcat下载地址](https://tomcat.apache.org/)，解压之后选到tomcat home就好了![配置tomcat路径](idea创建javaweb项目并部署运行/image-20220731175227518.png)
 
   - 之后就是deployment配置，选择deployment选项，+号添加external source，选择自己之前编写好的项目的context root（如果是只有这样一个会直接配置好），建议下面的application context也可以使用一个斜杠，这样的话之后在访问网址的时候就访问的时候简单一点（这一点在前面server选项卡的URL配置一项中会体现出同步的更改）![配置要部署的项目](idea创建javaweb项目并部署运行/image-20220731175440146.png)
 
