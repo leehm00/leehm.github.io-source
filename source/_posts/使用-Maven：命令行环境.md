@@ -20,17 +20,17 @@ summary:
 
 # 第一节 实验一：根据坐标创建 Maven 工程
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_1、maven-核心概念-坐标)1、Maven 核心概念：坐标
+## 1、Maven 核心概念：坐标
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_1数学中的坐标)①数学中的坐标
+### ①数学中的坐标
 
 ![image-20220805180416153](使用-Maven：命令行环境/image-20220805180416153.png)
 
 使用 x、y、z 三个**『向量』**作为空间的坐标系，可以在**『空间』**中唯一的定位到一个**『点』**。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_2maven中的坐标)②Maven中的坐标
+### ②Maven中的坐标
 
-#### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_1-向量说明)[1]向量说明
+#### [1]向量说明
 
 使用三个**『向量』**在**『Maven的仓库』**中**唯一**的定位到一个**『jar』**包。
 
@@ -38,7 +38,7 @@ summary:
 - **artifactId**：一个项目或者是项目中的一个模块的 id
 - **version**：版本号
 
-#### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_2-三个向量的取值方式)[2]三个向量的取值方式
+#### [2]三个向量的取值方式
 
 - groupId：公司或组织域名的倒序，通常也会加上项目名称
   - 例如：com.atguigu.maven
@@ -53,7 +53,7 @@ summary:
 - artifactId：pro01-atguigu-maven
 - version：1.0-SNAPSHOT
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_3坐标和仓库中-jar-包的存储路径之间的对应关系)③坐标和仓库中 jar 包的存储路径之间的对应关系
+### ③坐标和仓库中 jar 包的存储路径之间的对应关系
 
 坐标：
 
@@ -75,9 +75,9 @@ Maven本地仓库根目录\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
 
 一定要学会根据坐标到本地仓库中找到对应的 jar 包。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_2、实验操作)2、实验操作
+## 2、实验操作
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_1创建目录作为后面操作的工作空间)①创建目录作为后面操作的工作空间
+### ①创建目录作为后面操作的工作空间
 
 例如：D:\maven-workspace\space201026
 
@@ -89,11 +89,11 @@ WARNING
 - Maven 本地仓库：兵营
 - 本地工作空间：战场
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_2在工作空间目录下打开命令行窗口)②在工作空间目录下打开命令行窗口
+### ②在工作空间目录下打开命令行窗口
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img010.7f3addf6.png)
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_3使用命令生成maven工程)③使用命令生成Maven工程
+### ③使用命令生成Maven工程
 
 ![images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img008.be45c9ad.png)
 
@@ -116,7 +116,7 @@ WARNING
 > Confirm properties configuration: groupId: com.atguigu.maven artifactId: pro01-maven-java version: 1.0-SNAPSHOT package: com.atguigu.maven Y: :【直接回车，表示确认。如果前面有输入错误，想要重新输入，则输入 N 再回车。】
 >
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_4调整)④调整
+### ④调整
 
 Maven 默认生成的工程，对 junit 依赖的是较低的 3.8.1 版本，我们可以改成较适合的 4.12 版本。
 
@@ -141,7 +141,7 @@ Maven 默认生成的工程，对 junit 依赖的是较低的 3.8.1 版本，我
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_5自动生成的-pom-xml-解读)⑤自动生成的 pom.xml 解读
+### ⑤自动生成的 pom.xml 解读
 
 ```xml
   <!-- 当前Maven工程的坐标 -->
@@ -181,33 +181,33 @@ Maven 默认生成的工程，对 junit 依赖的是较低的 3.8.1 版本，我
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_3、maven核心概念-pom)3、Maven核心概念：POM
+## 3、Maven核心概念：POM
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_1含义)①含义
+### ①含义
 
 POM：**P**roject **O**bject **M**odel，项目对象模型。和 POM 类似的是：DOM（Document Object Model），文档对象模型。它们都是模型化思想的具体体现。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_2模型化思想)②模型化思想
+### ②模型化思想
 
 POM 表示将工程抽象为一个模型，再用程序中的对象来描述这个模型。这样我们就可以用程序来管理项目了。我们在开发过程中，最基本的做法就是将现实生活中的事物抽象为模型，然后封装模型相关的数据作为一个对象，这样就可以在程序中计算与现实事物相关的数据。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_3对应的配置文件)③对应的配置文件
+### ③对应的配置文件
 
 POM 理念集中体现在 Maven 工程根目录下 **pom.xml** 这个配置文件中。所以这个 pom.xml 配置文件就是 Maven 工程的核心配置文件。其实学习 Maven 就是学这个文件怎么配置，各个配置有什么用。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_4、maven核心概念-约定的目录结构)4、Maven核心概念：约定的目录结构
+## 4、Maven核心概念：约定的目录结构
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_1各个目录的作用)①各个目录的作用
+### ①各个目录的作用
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img011.621b1ac3.png)
 
 另外还有一个 target 目录专门存放构建操作输出的结果。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_2约定目录结构的意义)②约定目录结构的意义
+### ②约定目录结构的意义
 
 Maven 为了让构建过程能够尽可能自动化完成，所以必须约定目录结构的作用。例如：Maven 执行编译操作，必须先去 Java 源程序目录读取 Java 源代码，然后执行编译，最后把编译结果存放在 target 目录。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse01.html#_3约定大于配置)③约定大于配置
+### ③约定大于配置
 
 Maven 对于目录结构这个问题，没有采用配置的方式，而是基于约定。这样会让我们在开发过程中非常方便。如果每次创建 Maven 工程后，还需要针对各个目录的位置进行详细的配置，那肯定非常麻烦。
 
@@ -215,7 +215,7 @@ Maven 对于目录结构这个问题，没有采用配置的方式，而是基�
 
 # 第二节 实验二：在 Maven 工程中编写代码
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse02.html#_1、主体程序)1、主体程序
+## 1、主体程序
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img012.0bcc2c5d.png)
 
@@ -235,7 +235,7 @@ public class Calculator {
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse02.html#_2、测试程序)2、测试程序
+## 2、测试程序
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img013.8b57a581.png)
 
@@ -275,7 +275,7 @@ public class CalculatorTest{
 
 # 实验三：执行 Maven 的构建命令
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse03.html#_1、要求)1、要求
+## 1、要求
 
 运行 Maven 中和构建操作相关的命令时，必须进入到 pom.xml 所在的目录。如果没有在 pom.xml 所在的目录运行 Maven 的构建命令，那么会看到下面的错误信息：
 
@@ -289,14 +289,14 @@ The goal you specified requires a project to execute but there is no POM in this
 >
 > mvn -v 命令和构建操作无关，只要正确配置了 PATH，在任何目录下执行都可以。而构建相关的命令要在 pom.xml 所在目录下运行——操作哪个工程，就进入这个工程的 pom.xml 目录。
 >
-> ## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse03.html#_2、清理操作)2、清理操作
+> ## 2、清理操作
 >
 
 mvn clean
 
 效果：删除 target 目录
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse03.html#_3、编译操作)3、编译操作
+## 3、编译操作
 
 主程序编译：mvn compile
 
@@ -306,19 +306,23 @@ mvn clean
 
 测试程序编译结果存放的目录：target/test-classes
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse03.html#_4、测试操作)4、测试操作
+## 4、测试操作
 
 mvn test
 
+> TIPS
+>
+> 其实在`mvn test`的时候也就顺便执行了`mvn compile `和`mvn test-compile`两条命令了
+
 测试的报告存放的目录：target/surefire-reports
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse03.html#_5、打包操作)5、打包操作
+## 5、打包操作
 
 mvn package
 
 打包的结果——jar 包，存放的目录：target
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse03.html#_6、安装操作)6、安装操作
+## 6、安装操作
 
 mvn install
 
@@ -329,7 +333,7 @@ mvn install
 
 
 
-安装的效果是将本地构建过程中生成的 jar 包存入 Maven 本地仓库。这个 jar 包在 Maven 仓库中的路径是根据它的坐标生成的。
+安装的效果是将本地构建过程中生成的 jar 包存入 Maven 本地仓库（即你自己的电脑上的maven仓库）。这个 jar 包在 Maven 仓库中的路径是根据它的坐标生成的。
 
 坐标信息如下：
 
@@ -353,7 +357,7 @@ D:\maven-rep1026\com\atguigu\maven\pro01-maven-java\1.0-SNAPSHOT\pro01-maven-jav
 
 # 实验四：创建 Maven 版的 Web 工程
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_1、说明)1、说明
+## 1、说明
 
 使用 mvn archetype:generate 命令生成 Web 工程时，需要使用一个专门的 archetype。这个专门生成 Web 工程骨架的 archetype 可以参照官网看到它的用法：
 
@@ -361,7 +365,7 @@ D:\maven-rep1026\com\atguigu\maven\pro01-maven-java\1.0-SNAPSHOT\pro01-maven-jav
 
 参数 archetypeGroupId、archetypeArtifactId、archetypeVersion 用来指定现在使用的 maven-archetype-webapp 的坐标。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_2、操作)2、操作
+## 2、操作
 
 注意：如果在上一个工程的目录下执行 mvn archetype:generate 命令，那么 Maven 会报错：不能在一个非 pom 的工程下再创建其他工程。所以不要再刚才创建的工程里再创建新的工程，**请回到工作空间根目录**来操作。
 
@@ -382,7 +386,7 @@ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -Darchetyp
 > Define value for property 'package' com.atguigu.maven: :【直接回车，使用默认值】 Confirm properties configuration: groupId: com.atguigu.maven artifactId: pro02-maven-web version: 1.0-SNAPSHOT package: com.atguigu.maven Y: :【直接回车，表示确认】
 >
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_3、生成的pom-xml)3、生成的pom.xml
+## 3、生成的pom.xml
 
 确认打包的方式是war包形式
 
@@ -392,7 +396,7 @@ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -Darchetyp
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_4、生成的web工程的目录结构)4、生成的Web工程的目录结构
+## 4、生成的Web工程的目录结构
 
 ![./images](data:image/png;base64,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)
 
@@ -400,17 +404,17 @@ webapp 目录下有 index.jsp
 
 WEB-INF 目录下有 web.xml
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_5、创建-servlet)5、创建 Servlet
+## 5、创建 Servlet
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_1在-main-目录下创建-java-目录)①在 main 目录下创建 java 目录
+### ①在 main 目录下创建 java 目录
 
 ![./images](data:image/png;base64,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)
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_2在-java-目录下创建-servlet-类所在的包的目录)②在 java 目录下创建 Servlet 类所在的包的目录
+### ②在 java 目录下创建 Servlet 类所在的包的目录
 
 ![./images](data:image/png;base64,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)
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_3在包下创建-servlet-类)③在包下创建 Servlet 类
+### ③在包下创建 Servlet 类
 
 ```java
 package com.atguigu.maven;
@@ -434,7 +438,7 @@ public class HelloServlet extends HttpServlet{
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_4在-web-xml-中注册-servlet)④在 web.xml 中注册 Servlet
+### ④在 web.xml 中注册 Servlet
 
 ```xml
   <servlet>
@@ -449,7 +453,7 @@ public class HelloServlet extends HttpServlet{
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_6、在-index-jsp-页面编写超链接)6、在 index.jsp 页面编写超链接
+## 6、在 index.jsp 页面编写超链接
 
 ```html
 <html>
@@ -467,7 +471,7 @@ public class HelloServlet extends HttpServlet{
 > JSP全称是 Java Server Page，和 Thymeleaf 一样，是服务器端页面渲染技术。这里我们不必关心 JSP 语法细节，编写一个超链接标签即可。
 >
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_7、编译)7、编译
+## 7、编译
 
 此时直接执行 mvn compile 命令出错：
 
@@ -488,7 +492,7 @@ public class HelloServlet extends HttpServlet{
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img018.f836f056.png)
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_8、配置对-servlet-api-jar-包的依赖)8、配置对 servlet-api.jar 包的依赖
+## 8、配置对 servlet-api.jar 包的依赖
 
 对于不知道详细信息的依赖可以到https://mvnrepository.com/网站查询。使用关键词搜索，然后在搜索结果列表中选择适合的使用。
 
@@ -510,13 +514,13 @@ public class HelloServlet extends HttpServlet{
 
 这样就可以把上面的信息加入 pom.xml。重新执行 mvn compile 命令。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_9、将-web-工程打包为-war-包)9、将 Web 工程打包为 war 包
+## 9、将 Web 工程打包为 war 包
 
 运行 mvn package 命令，生成 war 包的位置如下图所示：
 
 ![./images](data:image/png;base64,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)
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse04.html#_10、将-war-包部署到-tomcat-上运行)10、将 war 包部署到 Tomcat 上运行
+## 10、将 war 包部署到 Tomcat 上运行
 
 将 war 包复制到 Tomcat/webapps 目录下
 
@@ -532,11 +536,11 @@ public class HelloServlet extends HttpServlet{
 
 # 实验五：让 Web 工程依赖 Java 工程
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_1、观念)1、观念
+## 1、观念
 
 明确一个意识：从来只有 Web 工程依赖 Java 工程，没有反过来 Java 工程依赖 Web 工程。本质上来说，Web 工程依赖的 Java 工程其实就是 Web 工程里导入的 jar 包。最终 Java 工程会变成 jar 包，放在 Web 工程的 WEB-INF/lib 目录下。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_2、操作)2、操作
+## 2、操作
 
 在 pro02-maven-web 工程的 pom.xml 中，找到 dependencies 标签，在 dependencies 标签中做如下配置：
 
@@ -552,13 +556,13 @@ public class HelloServlet extends HttpServlet{
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_3、在-web-工程中-编写测试代码)3、在 Web 工程中，编写测试代码
+## 3、在 Web 工程中，编写测试代码
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_1补充创建目录)①补充创建目录
+### ①补充创建目录
 
 pro02-maven-web**\src\test\java\com\atguigu\maven**
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_2确认-web-工程依赖了-junit)②确认 Web 工程依赖了 junit
+### ②确认 Web 工程依赖了 junit
 
 ```xml
     <dependency>
@@ -571,19 +575,19 @@ pro02-maven-web**\src\test\java\com\atguigu\maven**
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_3创建测试类)③创建测试类
+### ③创建测试类
 
 把 Java 工程的 CalculatorTest.java 类复制到 pro02-maven-wb**\src\test\java\com\atguigu\maven** 目录下
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_4、执行maven命令)4、执行Maven命令
+## 4、执行Maven命令
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_1测试命令)①测试命令
+### ①测试命令
 
 mvn test
 
 说明：测试操作中会提前自动执行编译操作，测试成功就说明编译也是成功的。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_2打包命令)②打包命令
+### ②打包命令
 
 mvn package
 
@@ -593,7 +597,7 @@ mvn package
 
 ![./images](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAboAAABrCAIAAACOgNDsAAAUXklEQVR42u2de3AVVZ7HTwgyBpVHURoeog4LwWEhswo1Iq8FAuoAOqmBEiNiwIUgUAILMsLC4Mq7RsAAMyIBwcwyPByw2DXguCBhRmCAIawbXCoQdp3hOUhRPKKCDAn76z59zz39PvfaSd/L/X7+uHVv9+nT59Wf/p3THUg7duwYAwCkGF26dElLS6uqqgq7IMlBRUUFfabdunUr7JIAAOqaevXq0eelS5fCLkii07RpU/qsqalh0CUAqQnXJbcA8EBuKOgSgFQEulQEugQg1YEuFYEuAUh1oEtFoEsAUh3oUhHoEoBUB7pUBLoEINWBLhWBLkPg2rVrAwcOnDJlCn2GXRaQfAQ+flJWlxcvXnzyySc//vjjM2fODBo0qKSkpF27dh5tm1i6pNJ36tTp3LlzjRo1+vTTT7Ozs2njtm3bqCb0Rd6Y1ECXtQTGT3zYdTly5Ej6XLt2Lf+5ZMkSUgm1ZEZGhvi5efPmIUOGlJaW8jQtWrQ4cuRIs2bN6Nj33nuPb+zTp484ygIlo86aPHkyr05ZWZncO3TU4sWL6ZO+015xFo8M4yCJdclbjQpNLUgtMnr0aGp92j5hwoTVq1dTA4mN1CUhljOomtaqLmv1FImpe4yfuLHrUtiK2s2uM266sWPHOhZDeJDZtOuYjOdPnqqsrBQqtOiylgab0KUYEt5t66NLOpjaKCcnJz09PfCyWigvLx86dOiePXuo6I6Fprr16NFj06ZNyR4gxDfcY+qLBNElxk9tEPj4seuSGpNHW9RW3CkUPL788st0RsonLy9v9uzZboGYrEuKQ+n+pKLLcePGvf322/xux76DLmMacgHrkjLav39/27Ztn3vuOd/T8zNRK7z22ms0IaIt1Ny8fcX2hx9+mJrgm2++4ZMmJsXwtJ3Ce9GycqNz3KIDfhnMmDFj/PjxV69epZPSRj7/ohbnOVD39+zZk/byUvXt21dEIkyaa8gF48fyzIcPH075yxk6djyfDK5atYoyF/1tz9OtobybV70vxJyURSYvdN+Wq+/dKTRppY07d+7kt3o5Nyp/fn6+JXOPmRHGT1KMH7suZWvwhqUycPGJ21LDhg29demtHnuy1q1bUyOvX79erj6LUZcxDTl5Mi5Xyq1tfXRZXV29cePGEydOqJyeV7uiokIMXz46eQnEdj4mXn31VXEb4cmKi4vlG5FluPPxypvSXmdKyS+kXbt20SAeMWKEpV/nzZtH41WekVGbWvqja9euIvoQXUgbKXNqU56huOXKBRC3UMpt/vz5gwcPpmLz8pNc7Hnyi83eUN6TxDj6gg8y+m6vvmOn8AuVH8u7hq5Vt/KrjGCMn6QYP46PekSpqCRDhgwhl82aNWvDhg3URPy2xMsjVhV5o/GWj2Ptkg8nOumiRYvszSvO4ni/iXvIuenSrW391y5v3Ljx1ltvXb9+nWreq1cvxUtU/mm5uuRlETkZfXeLDqgR33jjDbF0YlnRb9WqlRhS8oTLMvmiTPhZeDxCX/he+sJbinqIxxQCHkzJ45VPQ+iMcgFEDnPmzMnNzSXpLF++/KWXXqKUp06dsudpWfRRn1vF3Rf26ltCA0uniJ9cH97lr6UyY/zU2fhx1CXJnfy4Zs0aXhKaevPCUw7ewaPc8vIisuUpnKMu+fcHH3yQBB332qX6kHPTpVvbBh9dxjHceTfQyLCsLvNDPFaLRZ29hzulocji9ddfp76RV7h4h/FM+PMBuWD2zEVRLdEB3z5p0iQx0Kmz6dLlt2J7nm4N5T0g4u4LHlhZqq+uS9/y10aZMX7qcvw46pKrhGK9wsJCKgkVgOpLp1i3bh2vgoouPdaL3ebsfLhSCfmTHxajLgOJLuPUZRxrT3Rn4ENTxNWWEtgnU/bbiNhITSZGZ9zDXb6QRKkoQ+oYKgblQFt4ejEhpY00+eIl9B3uvLJbtmzJysqiuvPvfErlmCdvEHtDeU+m4ugLS2PK1XfsFMfJuFv5VUYwxk9SjB+39y7JaA0aNGjfvr1o6nfeeYfCQ/6mQUzRpb1sHkucPJDnE3kWxtqlW9sG+WRcvBBQVFTEpDV4e3PITw9EMiYtqMvr95bJiH1V23e480d4fPlj2LBhZWVl8vNT0TTMtqJPe1WiA2ZeGrMsUdnzdGso3+aN6SmzGHPy+3Gi+nbliXJaHvXYy28Z0B6PejB+kmL8uOmSt55oMd7sfB1W9JdYVZRn2WLt0qNsHrqUb9isTp6MW3Tp1rZBvneZmK/jgThwnFfWNhg/YZGyf9UTK9Al0KC+GzVq1LJly+yPnuuyDBg/oQBdKgJdAgN50uf7ukZtgPETFtClIgn0R5AAgFCALhWBLgFIdaBLRaBLAFId6FIR6BKAVAe6VAS6BCDVgS4VgS4BSHW4BYAi0CUAqUtOTo744xzgTVZWVkVFBYMuAQBAkbRjx46FXQYAAEgCEF0CAIAS0CUAACgBXQIAgBLQJQAAKAFdAgCAEtAlAAAoAV0CAIAShi6vX79+5513hl0Y8F2pqqpavHjxlClT7rnnnrDLArw4e/Zsy5Ytwy4FUIX3F3R5+0CuHDNmTO/evQ8dOkTShDETGegyuYAubyu4K/Py8p5++unjx48vWrQIxkxkoMvkArq8fZBdybfAmAkOdJlcQJe3D6TLsrIymobLG8mYTP/HVMIuHXAAukwuoEsAQgO6TC6gSwBCA7pMLqBLAEIDukwuAtfl0SUjdz6wYMKQ5i77/7p74vQd/8eyZ64dyopm7O0yb/KjYbcBACHhrssLm2dtYOOM6+iAypVyeNPEs32XDrrXtNG43OxoF+BjzJy5kcOFJSN/I/6B9T6v4AqNEqwuj8oNLWgzeBL14umSZWO3nI/2k9aR55+P9BkAKYirLunqeJv1vL+cPTOh6yF+4URo3X/F7N73H9709PJyY8vjwz4s6HCgaNmpZ2xhCuXzH/ctLehg3kou3tV6tnbpRa7KKG0G939wy/nu+oWppOlUIjBd8na33ov0Xp9KvWv8Fv1EXwqLT5ly4FYNu0EAqDvcdElX05ss7/mzG/YyVvpHEWRo4QizX2KaEJk1UtEd6qtL5hxdHoEuHQlGl5orD2bTTe+MfIujG+DWzBWGK+1+jE4HGDoGpCQuutS0+JfBk0iXkauJz9sy8xc4x49TW+4kvfJow3Qpqely7h+NHXrIgsm4K7WxdqndALsfmjGX6fc3615+4zq6ueTeIfoMXevmLv9jDkIBSAkcdaldFAcZ+5EcXZIo+52cHrHY49KVpQmR9Ty9o5jpk3Tzome8a5eILp0J/sm486ycYyy4RG+Shi4xBwcpiaMuD5TsZqx8vT4Z59Glfk0x7aphF043v1eLKswebDN4WM+DR/SA8eiSWV8+KyKPOKNL6NKZIHUpt7tMZFHywuaiXSdPs+6zO+2lHs09P/ZQpxXaJKJfz4O/OZmLXgEph+/a5alntKDyL9GHpcwINcRTgYgQ+SFT2QZT/BHn2iUm484Eo0suyjatM2kGYQ0VI+836N3ZL3oP1O9grYzo8oLP60cA3I4o6DIix+k7mCZNZsy12W7b+pXT+qafLu0hTpvHs9npTJ4zoksLQUaXzjPriC4PFG1iBX1Paf1En4U8nIweoj8X+nB277AbBIC6w1uXxpxsVqGxLqmvZRnhnoguow9UdV3y14xERgrRpfFzXOZ6/mIfZXioE18bhS4tBKxLyztcHOkNIUs/Ye0SpDQKutThi/6WJzx87VL3IxMPDBilPB8NMP0f9UiPhjRRZuafLo/t9fhUou6iS/2HpMvIe7ZYHAEpi78u7aLkiKAyOk8X150ekN6v9N6lVYjS0pnpj0qADv5mHIDQwN+MJxfQJQChAV0mF9AlAKEBXSYX0CUAoQFdJhfQJQChAV0mF9AlAKEBXSYX0CUAoQFdJhfQJQChAV0mFzHosl+/focPHw67wACEwCOPPPLJJ5+EXQqQECjpskmTJvXq1bt8+XLYpQUgBGpqasIuAkgIlHRJrqTPS5cuhV1aAOqUpk2bMugSRIhBlxg0INXAyAcy0CUArmDkAxnoEgBXMPKBTJy6LCpXyBuAJOflf9BG/jufQZdAI35dFmSHXXYAahlEl0AmAF0eO/nl8VNfXrzyte/JmjW+K6v1fe0fuC/sWgOgBHQJZALQ5dY//HdWi0YPtcrkyWSqq6vT09P5dzr8z2fOHz93NbfXD8OuNQBKQJdAJgBdrtiye2if7MaNG6elpYkElC3lefPMZw2//yNuTNpy5cqVTaXlYwf3DrvWACgBXQKZAHS5dOOOF/o/SroUeynPb7/99sb+lbeObM4Y80mDBg34dtLluh2HJz7XP+xaJwAnlnZv9/6zlXsntg27JLcrQbQwdAlkAtDlL369fcRTXZo0aSL2Xrt2jVyZVvZu/XEHbp78U8O23evXr0/bL1++/N7vDv3sxQGBVuGjMWkDirQv3QpN14a2/fPCRBVSLerSo+JubeWYhhVsv7Xyx0ZZJ+0zH0Kp5naQNuhpOhoHRLfsM34URPc45390puVQaYMpp2gxohkJpNMkqy7LiyesLtO/tRw0Y9oTmZat0kbnlMaOc+ZNGuf/c+G8cwOW5WfHm0bbWXLWSNl5lJHKqQIxHmUvjKib62lCIQBdzlm9dfSgriK6rK6u/vpgcdrv59eMLUsrW1Xvs3UZE8v4fJyiy1Ul+38+Kje48kvXhHb1MP1y4ZdXQUFB0ecdElWXtYJ3xR3byoK8g9K/mbXXaM+jHc2ZWnRJSfLfZ/s6zjTpKp8V6ymiZ3bP302XFvnbtayl2JrrUJcAqHNdlhcv/OtTXBuaMZguC004hx/VbRLd6Jqy5Gznzp3LzrWwqpD2rWUjpz3B4k5D59luO8R8dKxHOR5CG3/XfJpmyWjNEoMAdDnzV5vG5vaQdfntL/7uez/7X/qkn/SFPoUuV2zdM3f80MCKb7rQrFedNQBKGZwr7tlW0TQRxdmOrOwwV4rWzOfgx8082k7ylikvI/nAbe75O+rSyevWbbeTLmUinmFyxGcK/6wpM11+B5SGfv7XI/7uiuMoV6X6GbqOCUCXU5f82ytD/lHo8ubNm9Vrnrw+9IPv/fLv67/2Z6bPzUmXlH9VVdXyzb9/c/JwKW9+ZWxnAxwnaPp2Y/olz70iqcxXikUTnrrUd25/9v0B2ixPy44Z2Ucne9IcUD+faXZnCdV4wSLH6pkXdpw0yZwhs9Vbnuz6nsiazLVTnSvu2VZSInvYGSlrOymyMx0fMWOl00aTXSu98rfr0rUmln520qVXCzsOMKWRX3eIyMrsGweB2GIw5zTmTbGnkWfVXnNk/6OkcNm1MJ7bwyIAXb6ycPXkoTmkSxLlV199pWWaltZg3RM3s1+oyX7xjjvuWL7lD80aZeT163Ljxo3C35YunzZKytuYP0b1Z55QR64s85Qskqyd+TqLUZeR64TrrkCclud4YumYbQNX6geLUkVzdLyg5Y0DiqIZOq2gxXwip2Qu/eVY8ROebWVpGPsqYKSsEWHKx0e/W1rDPhl3zV+sTUYo2O6qS3tVvHXp2HSWAaY68usIXTItxARbiietBpFSCuyWsYd48aWJntOkOxP+R/nqMuLYxFq5DESXo9/41bQXnmrUqBHpcsovP6ifnn5XRoOqr6/X3LrV+O6MzlmtB3brSNt/2LZVbrcfLNq4c9Xr46W8HVb1DTvI250eLGh7mXp0aXnK4Xy526Mmc1AS2ctMYpTbSs+90ska5gIwU/38T+SazOHRTSzRZaVjDsaJDJnY4jQSZu5WcQ6X5pMlaI3f3PM3jwJXXcpTeoXo0qHpXJYj/EZ+HaC7gpke6bhEl9aUEZzsY53Bx5NGZU9cR3lEl04PpEIjAF2++C9vzRwxkOuSfn7+xblbTMvzxt+qKf+HH7iPVf9twfrSDg81H/RY1sJ1H/96/j9LecetS8fZn/rapZ8uNU9NYoXmCC+yu5jlG9er/2zReTnQXFGFE7kkY351c9mqIgsRiTmIp2P0cZL9AbXwkVPFffNnAa1d+rRwgurS4eGGySVRq3k8BrHYR2W9U2lNVGVPoLpMtOl4ALocOmXhv476CemS6QuXC9btuPL19TSmKbPxXXdOf6H/rHe3/+Ch5nk5j9JUffaaDzctniblbXrSKf2wT7jMk3HrXNVBEt9Jl5WWMEkqYv7RjuzzDsV77RPjj8aMYSul2FBFlx+pncgtmV/dLGufbm0VLRV/WG3KxmoWI1KLLmVY5CUkaKu4Wv5yr8qus40XcUbzEyZeX+bdwgmpS0dpyVuFPZxTGthXD+1J40hz/nxmZqax3SPo8z/KezIefTDuM+uvewLQZe4rsxdNfP7uu++mTKp17DnQXsqEdPnq0vVbl8+S9kReUikyP+lxGM1Oj3qYPMsqsEch8etSerDSraCAFTH5mbLpenV4jBCLLpniidyS+dTNtG7o3lamckWm0K7vRUoSsz+7kRaWXZ6C++av9t6ldEJPXTo3XULqMvoqpYGxeBd9XhJZzXNLGcnGZB/95aBM26liSyM/tGnpNUH2P8pv7VI6JrFWLwPQ5Y/H/HzF9H/KyMj49MgXJ85cPHfxqj2HmcP7USZVVVVjF7z70co50h6lUXsbkqr1rjuCaOHb4K96VGaziTXjTWAC0GXe1IU/7ZHdq2tnnpUb6enpu/f96YM95RvetE7GU1Ab+BvI2iaQFk5+XcKWQRKALv99176S3QeOfXHa92Ttv3//oN6P/aRvN2lb6unS4U0aECjBtXDy6xIECf55YABcgS6BDHQJgCvQJZCBLgFwBboEMvivzQBwBf+1GZDBf5wLgCsY+UAGugTAFYx8IANdAuAKRj6QiUGXAKQm0CXgKOkyJyentLQ07KICEAJZWVkVFRVhlwIkBEq6BAAAAF0CAIAS0CUAACgBXQIAgBLQJQAAKAFdAgCAEtAlAAAoAV0CAIAS0CUAACjx/6BMLMNgoqI8AAAAAElFTkSuQmCC)
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_3查看当前-web-工程所依赖的-jar-包的列表)③查看当前 Web 工程所依赖的 jar 包的列表
+### ③查看当前 Web 工程所依赖的 jar 包的列表
 
 mvn dependency:list
 
@@ -615,7 +619,7 @@ mvn dependency:list
 
 这样的格式虽然和我们 XML 配置文件中坐标的格式不同，但是本质上还是坐标信息，大家需要能够认识这样的格式，将来从 Maven 命令的日志或错误信息中看到这样格式的信息，就能够识别出来这是坐标。进而根据坐标到Maven 仓库找到对应的jar包，用这样的方式解决我们遇到的报错的情况。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse05.html#_4以树形结构查看当前-web-工程的依赖信息)④以树形结构查看当前 Web 工程的依赖信息
+### ④以树形结构查看当前 Web 工程的依赖信息
 
 mvn dependency:tree
 
@@ -631,27 +635,27 @@ mvn dependency:tree
 
 # 实验六：测试依赖的范围
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_1、依赖范围)1、依赖范围
+## 1、依赖范围
 
 标签的位置：dependencies/dependency/**scope**
 
 标签的可选值：**compile**/**test**/**provided**/system/runtime/**import**
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_1compile-和-test-对比)①compile 和 test 对比
+### ①compile 和 test 对比
 
 |         | main目录（空间） | test目录（空间） | 开发过程（时间） | 部署到服务器（时间） |
 | ------- | ---------------- | ---------------- | ---------------- | -------------------- |
 | compile | 有效             | 有效             | 有效             | 有效                 |
 | test    | 无效             | 有效             | 有效             | 无效                 |
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_2compile-和-provided-对比)②compile 和 provided 对比
+### ②compile 和 provided 对比
 
 |          | main目录（空间） | test目录（空间） | 开发过程（时间） | 部署到服务器（时间） |
 | -------- | ---------------- | ---------------- | ---------------- | -------------------- |
 | compile  | 有效             | 有效             | 有效             | 有效                 |
 | provided | 有效             | 有效             | 有效             | 无效                 |
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_3结论)③结论
+### ③结论
 
 compile：通常使用的第三方框架的 jar 包这样在项目实际运行时真正要用到的 jar 包都是以 compile 范围进行依赖的。比如 SSM 框架所需jar包。
 
@@ -659,9 +663,9 @@ test：测试过程中使用的 jar 包，以 test 范围依赖进来。比如 j
 
 provided：在开发过程中需要用到的“服务器上的 jar 包”通常以 provided 范围依赖进来。比如 servlet-api、jsp-api。而这个范围的 jar 包之所以不参与部署、不放进 war 包，就是避免和服务器上已有的同类 jar 包产生冲突，同时减轻服务器的负担。说白了就是：“**服务器上已经有了，你就别带啦！**”
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_2、测试)2、测试
+## 2、测试
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_1验证-compile-范围对-main-目录有效)①验证 compile 范围对 main 目录有效
+### ①验证 compile 范围对 main 目录有效
 
 TIP
 
@@ -673,7 +677,7 @@ main目录下的类：HelloServlet 使用compile范围导入的依赖：pro01-at
 
 验证方式：在 HelloServlet 类中导入 Calculator 类，然后编译就说明有效。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_2验证test范围对main目录无效)②验证test范围对main目录无效
+### ②验证test范围对main目录无效
 
 测试方式：在主体程序中导入org.junit.Test这个注解，然后执行编译。
 
@@ -703,13 +707,13 @@ public class Calculator {
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_3验证test和provided范围不参与服务器部署)③验证test和provided范围不参与服务器部署
+### ③验证test和provided范围不参与服务器部署
 
 其实就是验证：通过compile范围依赖的jar包会放入war包，通过test范围依赖的jar包不会放入war包。
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img026.0ad36150.png)
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse06.html#_4验证provided范围对测试程序有效)④验证provided范围对测试程序有效
+### ④验证provided范围对测试程序有效
 
 测试方式是在pro02-maven-web的测试程序中加入servlet-api.jar包中的类。
 
@@ -762,20 +766,20 @@ public class CalculatorTest{
 
 # 实验七：测试依赖的传递性
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse07.html#_1、依赖的传递性)1、依赖的传递性
+## 1、依赖的传递性
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse07.html#_1概念)①概念
+### ①概念
 
 A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，A 里面能不能直接使用 C？
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse07.html#_2传递的原则)②传递的原则
+### ②传递的原则
 
 在 A 依赖 B，B 依赖 C 的前提下，C 是否能够传递到 A，取决于 B 依赖 C 时使用的依赖范围。
 
 - B 依赖 C 时使用 compile 范围：可以传递
 - B 依赖 C 时使用 test 或 provided 范围：不能传递，所以需要这样的 jar 包时，就必须在需要的地方明确配置依赖才可以。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse07.html#_2、使用-compile-范围依赖-spring-core)2、使用 compile 范围依赖 spring-core
+## 2、使用 compile 范围依赖 spring-core
 
 测试方式：让 pro01-maven-java 工程依赖 spring-core
 
@@ -812,7 +816,7 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 > [INFO] \- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
 > [INFO] \- commons-logging:commons-logging:jar:1.1.1:compile
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse07.html#_3、验证-test-和-provided-范围不能传递)3、验证 test 和 provided 范围不能传递
+## 3、验证 test 和 provided 范围不能传递
 
 从上面的例子已经能够看到，pro01-maven-java 依赖了 junit，但是在 pro02-maven-web 工程中查看依赖树的时候并没有看到 junit。
 
@@ -841,7 +845,7 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 
 # 第八节 实验八：测试依赖的排除
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse08.html#_1、概念)1、概念
+## 1、概念
 
 当 A 依赖 B，B 依赖 C 而且 C 可以传递到 A 的时候，A 不想要 C，需要在 A 里面把 C 排除掉。而往往这种情况都是为了避免 jar 包之间的冲突。
 
@@ -849,7 +853,7 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 
 所以配置依赖的排除其实就是阻止某些 jar 包的传递。因为这样的 jar 包传递过来会和其他 jar 包冲突。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse08.html#_2、配置方式)2、配置方式
+## 2、配置方式
 
 ```xml
 <dependency>
@@ -871,7 +875,7 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse08.html#_3、测试)3、测试
+## 3、测试
 
 测试的方式：在 pro02-maven-web 工程中配置对 commons-logging 的排除
 
@@ -910,7 +914,7 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 
 # 第九节 实验九：继承
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_1、概念)1、概念
+## 1、概念
 
 Maven工程之间，A 工程继承 B 工程
 
@@ -919,7 +923,7 @@ Maven工程之间，A 工程继承 B 工程
 
 本质上是 A 工程的 pom.xml 中的配置继承了 B 工程中 pom.xml 的配置。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_2、作用)2、作用
+## 2、作用
 
 在父工程中统一管理项目中的依赖信息，具体来说是管理依赖信息的版本。
 
@@ -937,7 +941,7 @@ Maven工程之间，A 工程继承 B 工程
 
 通过在父工程中为整个项目维护依赖信息的组合既**保证了整个项目使用规范、准确的 jar 包**；又能够将**以往的经验沉淀**下来，节约时间和精力。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_3、举例)3、举例
+## 3、举例
 
 在一个工程中依赖多个 Spring 的 jar 包
 
@@ -953,9 +957,9 @@ Maven工程之间，A 工程继承 B 工程
 
 使用 Spring 时要求所有 Spring 自己的 jar 包版本必须一致。为了能够对这些 jar 包的版本进行统一管理，我们使用继承这个机制，将所有版本信息统一在父工程中进行管理。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_4、操作)4、操作
+## 4、操作
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_1创建父工程)①创建父工程
+### ①创建父工程
 
 创建的过程和前面创建 pro01-maven-java 一样。
 
@@ -976,7 +980,7 @@ Maven工程之间，A 工程继承 B 工程
 
 只有打包方式为 pom 的 Maven 工程能够管理其他 Maven 工程。打包方式为 pom 的 Maven 工程中不写业务代码，它是专门管理其他 Maven 工程的工程。
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_2创建模块工程)②创建模块工程
+### ②创建模块工程
 
 模块工程类似于 IDEA 中的 module，所以需要**进入 pro03-maven-parent 工程的根目录**，然后运行 mvn archetype:generate 命令来创建模块工程。
 
@@ -984,7 +988,7 @@ Maven工程之间，A 工程继承 B 工程
 
 ![./images](data:image/png;base64,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)
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_3查看被添加新内容的父工程-pom-xml)③查看被添加新内容的父工程 pom.xml
+### ③查看被添加新内容的父工程 pom.xml
 
 下面 modules 和 module 标签是聚合功能的配置
 
@@ -998,7 +1002,7 @@ Maven工程之间，A 工程继承 B 工程
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_4解读子工程的pom-xml)④解读子工程的pom.xml
+### ④解读子工程的pom.xml
 
 ```xml
 <!-- 使用parent标签指定当前工程的父工程 -->
@@ -1018,7 +1022,7 @@ Maven工程之间，A 工程继承 B 工程
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_5在父工程中配置依赖的统一管理)⑤在父工程中配置依赖的统一管理
+### ⑤在父工程中配置依赖的统一管理
 
 ```xml
 <!-- 使用dependencyManagement标签配置对依赖的管理 -->
@@ -1056,7 +1060,7 @@ Maven工程之间，A 工程继承 B 工程
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_6子工程中引用那些被父工程管理的依赖)⑥子工程中引用那些被父工程管理的依赖
+### ⑥子工程中引用那些被父工程管理的依赖
 
 关键点：省略版本号
 
@@ -1090,7 +1094,7 @@ Maven工程之间，A 工程继承 B 工程
 
 
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_7在父工程中升级依赖信息的版本)⑦在父工程中升级依赖信息的版本
+### ⑦在父工程中升级依赖信息的版本
 
 ```xml
 ……
@@ -1114,7 +1118,7 @@ Maven工程之间，A 工程继承 B 工程
 > [INFO] org.springframework:spring-beans:jar:4.1.4.RELEASE:compile
 > [INFO] org.springframework:spring-expression:jar:4.1.4.RELEASE:compile
 
-### [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_8在父工程中声明自定义属性)⑧在父工程中声明自定义属性
+### ⑧在父工程中声明自定义属性
 
 ```xml
 <!-- 通过自定义属性，统一指定Spring的版本 -->
@@ -1142,7 +1146,7 @@ Maven工程之间，A 工程继承 B 工程
 
 真正实现“一处修改，处处生效”。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse09.html#_5、实际意义)5、实际意义
+## 5、实际意义
 
 ![./images](http://heavy_code_industry.gitee.io/code_heavy_industry/assets/img/img037.53c95c38.jpg)
 
@@ -1152,7 +1156,7 @@ Maven工程之间，A 工程继承 B 工程
 
 # 实验十：聚合
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse10.html#_1、聚合本身的含义)1、聚合本身的含义
+## 1、聚合本身的含义
 
 部分组成整体
 
@@ -1160,7 +1164,7 @@ Maven工程之间，A 工程继承 B 工程
 
 动画片《战神金刚》中的经典台词：“我来组成头部！我来组成手臂！”就是聚合关系最生动的体现。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse10.html#_2、maven-中的聚合)2、Maven 中的聚合
+## 2、Maven 中的聚合
 
 使用一个“总工程”将各个“模块工程”汇集起来，作为一个整体对应完整的项目。
 
@@ -1183,7 +1187,7 @@ Maven工程之间，A 工程继承 B 工程
 > - 总工程
 > - 模块工程
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse10.html#_3、好处)3、好处
+## 3、好处
 
 - 一键执行 Maven 命令：很多构建命令都可以在“总工程”中一键执行。
 
@@ -1191,7 +1195,7 @@ Maven工程之间，A 工程继承 B 工程
 
 - 配置聚合之后，各个模块工程会在总工程中展示一个列表，让项目中的各个模块一目了然。
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse10.html#_4、聚合的配置)4、聚合的配置
+## 4、聚合的配置
 
 在总工程中配置 modules 即可：
 
@@ -1205,7 +1209,7 @@ Maven工程之间，A 工程继承 B 工程
 
 
 
-## [#](http://heavy_code_industry.gitee.io/code_heavy_industry/pro002-maven/chapter03/verse10.html#_5、依赖循环问题)5、依赖循环问题
+## 5、依赖循环问题
 
 如果 A 工程依赖 B 工程，B 工程依赖 C 工程，C 工程又反过来依赖 A 工程，那么在执行构建操作时会报下面的错误：
 
